@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-    belongs_to :courses,
+    has_many :courses,
         class_name: 'Course',
-        foreign_key: :id,
+        foreign_key: :instructor_id,
         primary_key: :id
     
-    belongs_to :enrollments,
+    has_many :enrollments,
         class_name: 'Enrollment',
-        foreign_key: :id,
+        foreign_key: :student_id,
         primary_key: :id
 end
